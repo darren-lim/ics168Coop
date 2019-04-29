@@ -11,6 +11,7 @@ public class PressurePlatform : MonoBehaviour
     public bool yAxisMove = true;
     public bool Xreversed = false;
     public bool Yreversed = false;
+    public GameObject playerToMove;
 
     [SerializeField]
     bool player_on = false;
@@ -37,10 +38,12 @@ public class PressurePlatform : MonoBehaviour
             {
 
                 gameObject.transform.position += new Vector3(XreverseFactor*speed,0,0);
+                playerToMove.transform.position += new Vector3(XreverseFactor*speed,0,0);
             }
             if (yAxisMove) 
             {
                 gameObject.transform.position += new Vector3(0, YreverseFactor*speed, 0);
+                playerToMove.transform.position += new Vector3(0, YreverseFactor*speed, 0);
             }
         }
         else if (player_on == false &&

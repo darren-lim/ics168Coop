@@ -255,7 +255,7 @@ PrefabInstance:
     - target: {fileID: 7457897774834183970, guid: 169659232b0334a2caf72a849546f8c7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.55
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 7457897774834183970, guid: 169659232b0334a2caf72a849546f8c7,
         type: 3}
@@ -388,6 +388,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &456132923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6576574378575303891, guid: 72d5c758b45ee4d598d542fb4092e768,
+    type: 3}
+  m_PrefabInstance: {fileID: 94348881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &516279548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -630,11 +636,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPos: {x: -5, y: -2, z: 0}
   minPos: {x: -5, y: -3, z: 0}
-  speed: 0.01
+  speed: 0.05
   xAxisMove: 0
   yAxisMove: 1
   Xreversed: 0
   Yreversed: 0
+  playerToMove: {fileID: 456132923}
   player_on: 0
   currPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &607954945
@@ -818,6 +825,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 564701082065088846, guid: 8632328d6627d25429b4f445a8ef8282,
+        type: 3}
+      propertyPath: Speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8632328d6627d25429b4f445a8ef8282, type: 3}
 --- !u!4 &669385817 stripped
@@ -857,13 +869,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7475de1dacaa345d0a0774876ca5018a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPos: {x: 1, y: 3, z: 0}
-  minPos: {x: 4, y: 0, z: 0}
-  speed: 0.03
+  maxPos: {x: -1, y: 3, z: 0}
+  minPos: {x: 1, y: 1, z: 0}
+  speed: 0.05
   xAxisMove: 1
   yAxisMove: 1
   Xreversed: 1
   Yreversed: 0
+  playerToMove: {fileID: 456132923}
   player_on: 0
   currPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &898829122
@@ -936,7 +949,7 @@ PrefabInstance:
     - target: {fileID: 5521030916139633650, guid: dcabf6c76aa514c55891c25f8f663a9f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.86
+      value: 3.28
       objectReference: {fileID: 0}
     - target: {fileID: 5521030916139633650, guid: dcabf6c76aa514c55891c25f8f663a9f,
         type: 3}
@@ -946,7 +959,7 @@ PrefabInstance:
     - target: {fileID: 5521030916491902685, guid: dcabf6c76aa514c55891c25f8f663a9f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.81
+      value: 3.33
       objectReference: {fileID: 0}
     - target: {fileID: 5521030916491902685, guid: dcabf6c76aa514c55891c25f8f663a9f,
         type: 3}
@@ -1171,7 +1184,7 @@ PrefabInstance:
     - target: {fileID: 7457897774834183970, guid: 169659232b0334a2caf72a849546f8c7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7457897774834183970, guid: 169659232b0334a2caf72a849546f8c7,
         type: 3}
@@ -1463,11 +1476,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPos: {x: 3, y: -1, z: 0}
   minPos: {x: 0, y: -1, z: 0}
-  speed: 0.03
+  speed: 0.05
   xAxisMove: 1
   yAxisMove: 0
   Xreversed: 0
   Yreversed: 0
+  playerToMove: {fileID: 456132923}
   player_on: 0
   currPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1993831876
@@ -1548,12 +1562,12 @@ PrefabInstance:
     - target: {fileID: 7812780957024918971, guid: 8954bdea4e95c1f4ba60c7953e854302,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.93
+      value: -26.62
       objectReference: {fileID: 0}
     - target: {fileID: 7812780957024918971, guid: 8954bdea4e95c1f4ba60c7953e854302,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.63
+      value: -3.93
       objectReference: {fileID: 0}
     - target: {fileID: 7812780957024918971, guid: 8954bdea4e95c1f4ba60c7953e854302,
         type: 3}

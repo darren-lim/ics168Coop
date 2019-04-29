@@ -1336,6 +1336,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1165709534}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1165709537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6576574378575303891, guid: 72d5c758b45ee4d598d542fb4092e768,
+    type: 3}
+  m_PrefabInstance: {fileID: 1165709534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1231700809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,6 +1822,9 @@ MonoBehaviour:
   speed: 0.05
   xAxisMove: 0
   yAxisMove: 1
+  Xreversed: 0
+  Yreversed: 0
+  playerToMove: {fileID: 1165709537}
   player_on: 0
   currPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &1864986141
@@ -1936,6 +1945,9 @@ MonoBehaviour:
   speed: 0.05
   xAxisMove: 0
   yAxisMove: 0
+  Xreversed: 0
+  Yreversed: 0
+  playerToMove: {fileID: 0}
   player_on: 0
   currPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1919098851
