@@ -311,6 +311,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7861977282366879433, guid: 72d5c758b45ee4d598d542fb4092e768,
+        type: 3}
+      propertyPath: ghostInventory
+      value: 
+      objectReference: {fileID: 233433317}
     m_RemovedComponents:
     - {fileID: 7861977282839635308, guid: 72d5c758b45ee4d598d542fb4092e768, type: 3}
     - {fileID: 7861977282839635311, guid: 72d5c758b45ee4d598d542fb4092e768, type: 3}
