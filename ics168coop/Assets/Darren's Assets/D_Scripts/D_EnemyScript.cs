@@ -54,6 +54,7 @@ public class D_EnemyScript : MonoBehaviour
 
     public void changeSpeed(float inc)
     {
+        if (Speed > 4) return;
         Speed += inc;
     }
 
