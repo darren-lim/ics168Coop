@@ -119,5 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e5b0775f5d5954598f60c40c6e88b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.5
+  Speed: 3
   Ghost: {fileID: 0}
+  isStunned: 0
+  StunTime: 2
+  MaxStunTime: 2
+  InitPos: {x: 0, y: 0, z: 0}
