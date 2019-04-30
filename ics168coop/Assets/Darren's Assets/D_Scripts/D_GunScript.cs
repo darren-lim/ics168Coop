@@ -28,7 +28,7 @@ public class D_GunScript : MonoBehaviour
         //look towards enemy
         LookAtEnemy();
         //if hit key, then shoot
-        if (Input.GetKey(KeyCode.L) && fireTime <= 0 && AmmoCount > 0 && enemyExists)
+        if (Input.GetKey(KeyCode.Space) && fireTime <= 0 && AmmoCount > 0 && enemyExists)
         {
             //spawn bullet
             fireTime = MaxFireTime;
