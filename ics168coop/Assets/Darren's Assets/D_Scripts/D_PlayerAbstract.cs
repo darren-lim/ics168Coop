@@ -9,7 +9,7 @@ public abstract class D_PlayerAbstract : MonoBehaviour
 
     protected bool CheckGround(LayerMask GroundLayer)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.0f, GroundLayer);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.5f, Vector2.down, 1.0f, GroundLayer);
         if (hit.collider != null)
         {
             return true;
