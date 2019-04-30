@@ -1782,6 +1782,16 @@ PrefabInstance:
       propertyPath: livingInventory
       value: 
       objectReference: {fileID: 1231700810}
+    - target: {fileID: 5561981721564713191, guid: 72d5c758b45ee4d598d542fb4092e768,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561981721564713191, guid: 72d5c758b45ee4d598d542fb4092e768,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.11
+      objectReference: {fileID: 0}
     - target: {fileID: 564701081169750476, guid: 72d5c758b45ee4d598d542fb4092e768,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1828,6 +1838,16 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 564701081169750482, guid: 72d5c758b45ee4d598d542fb4092e768,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 564701081169750482, guid: 72d5c758b45ee4d598d542fb4092e768,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6.61
+      objectReference: {fileID: 0}
     - target: {fileID: 6233456265358046726, guid: 72d5c758b45ee4d598d542fb4092e768,
         type: 3}
       propertyPath: m_Sprite
@@ -1838,26 +1858,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5561981721564713191, guid: 72d5c758b45ee4d598d542fb4092e768,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 5561981721564713191, guid: 72d5c758b45ee4d598d542fb4092e768,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 564701081169750482, guid: 72d5c758b45ee4d598d542fb4092e768,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 7.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 564701081169750482, guid: 72d5c758b45ee4d598d542fb4092e768,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 6.61
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7861977282366879433, guid: 72d5c758b45ee4d598d542fb4092e768, type: 3}
@@ -3075,7 +3075,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 05d47d6e1145e6b4397ba5653cf79664, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

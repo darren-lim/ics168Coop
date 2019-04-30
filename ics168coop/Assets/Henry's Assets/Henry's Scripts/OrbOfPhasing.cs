@@ -40,11 +40,5 @@ public class OrbOfPhasing : MonoBehaviour, IInventoryItem
         myT.GetComponent<CircleCollider2D>().enabled = true;
 
         //Instantiate(gameObject, newPosition, Quaternion.identity);
-
-        Reaper = GameObject.FindObjectOfType(typeof(D_EnemyScript)) as D_EnemyScript;
-        if (Reaper != null)
-        {
-            Reaper.changeSpeed(-1.4f);
-        }
     }
 }
