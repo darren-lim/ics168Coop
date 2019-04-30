@@ -5,7 +5,6 @@ using UnityEngine;
 public class H_Ghost_Player : D_PlayerAbstract
 {
     public float P1Speed = 5f;
-    public float P1Jump = 5f;
     public float P1Health = 3f;
 
     Rigidbody2D rbody;
@@ -37,7 +36,11 @@ public class H_Ghost_Player : D_PlayerAbstract
     {
         Move();
     }
-
+    private void FixedUpdate()
+    {
+        rbody.velocity = rbody.velocity * 0.96f;
+        rbody.angularVelocity = rbody.angularVelocity * 0.96f;
+    }
     protected override void Move()
     {
         if (Input.GetKey("right"))
@@ -51,14 +54,14 @@ public class H_Ghost_Player : D_PlayerAbstract
             //transform.Translate(Vector2.left * Time.deltaTime * P1Speed);
             rbody.AddForce(new Vector2(-P1Speed * Time.deltaTime, 0), ForceMode2D.Impulse);
         }
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKey("up"))
         {
             //transform.Translate(Vector2.up * Time.deltaTime * P1Jump);
-            rbody.AddForce(new Vector2(0, P1Jump), ForceMode2D.Impulse);
+            rbody.AddForce(new Vector2(0, P1Speed * Time.deltaTime), ForceMode2D.Impulse);
         }
-        if (Input.GetKeyDown("down"))
+        else if (Input.GetKey("down"))
         {
-            rbody.AddForce(new Vector2(0, -P1Jump), ForceMode2D.Impulse);
+            rbody.AddForce(new Vector2(0, -P1Speed * Time.deltaTime), ForceMode2D.Impulse);
         }
         if (Input.GetKeyDown("space"))
         {

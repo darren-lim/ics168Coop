@@ -35,17 +35,17 @@ public class H_Living_Player : D_PlayerAbstract
 
     protected override void Move()
     {
-        if (Input.GetKey("d") || Input.GetKey("a"))
+        if (Input.GetKey("d"))
         {
-            transform.Translate(new Vector2(Input.GetAxis("Horizontal"),0) * Time.deltaTime * P2Speed);
+            transform.Translate(Vector2.right * Time.deltaTime * P2Speed);
             //rbody.AddForce(new Vector2(Input.GetAxis("Horizontal"), 0) * P2Speed);
         }
-        /*
+        
         else if (Input.GetKey("a"))
         {
             transform.Translate(Vector2.left * Time.deltaTime * P2Speed);
             //rbody.AddForce(new Vector2(Input.GetAxis("Horizontal"), 0) * P2Speed);
-        }*/
+        }
         if (Input.GetKeyDown("w"))
         {
             //transform.Translate(Vector2.up * Time.deltaTime * P1Jump);
