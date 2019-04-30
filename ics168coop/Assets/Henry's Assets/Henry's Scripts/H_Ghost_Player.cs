@@ -63,31 +63,51 @@ public class H_Ghost_Player : D_PlayerAbstract
         {
             rbody.AddForce(new Vector2(0, -P1Speed * Time.deltaTime), ForceMode2D.Impulse);
         }
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("right shift"))
         {
             //Swap Items
             Debug.Log("Swapping Items");
-            IInventoryItem ghostItem = ghostInventory.mItems[0];
-            //IInventoryItem livingItem = livingInventory.mItems[0];
-            //ghostInventory.SwapItem(livingItem);
-            livingInventory.SwapItem(ghostItem);
-            //IInventoryItem ghostItem = ghostInventory.mItems[0];
-            //IInventoryItem livingItem = livingInventory.mItems[0];
+            IInventoryItem ghostItem, livingItem;
+            int ghostSize = ghostInventory.mItems.Count;
+            int livingSize = livingInventory.mItems.Count;
+            if (ghostSize != 0 && livingSize != 0)
+            {
+                Debug.Log("Both Inventories were full");
+                ghostItem = ghostInventory.mItems[0];
+                livingItem = livingInventory.mItems[0];
+                livingInventory.SwapItem(ghostItem);
+                ghostInventory.SwapItem(ghostItem);
+            }
+            if (ghostSize != 0 && livingSize == 0)
+            {
+                Debug.Log("living Inventory was empty before switching");
+                ghostItem = ghostInventory.mItems[0];
+                livingInventory.SwapItem(ghostItem);
+                ghostInventory.RemoveItem(ghostItem);
+            }
+            if (ghostSize == 0 && livingSize != 0)
+            {
+                Debug.Log("Ghost Inventory was empty before switching");
+                livingItem = livingInventory.mItems[0];
+                ghostInventory.SwapItem(livingItem);
+                livingInventory.RemoveItem(livingItem);
+            }
+            if (ghostSize == 0 && livingSize == 0)
+            {
+                Debug.Log("Both Inventories are empty");
+            }
+        }
+        if (Input.GetKeyDown("right ctrl"))
+        {
+            Debug.Log("Ghost Player is dropping their item");
+            IInventoryItem ghostItem;
+            int ghostSize = livingInventory.mItems.Count;
 
-            //Debug.LogFormat("livingItem is {0} ", livingitem.Name);
-            //IInventoryItem temp = ghostItem;
-            //ghostItem = livingItem;
-            //livingItem = temp;
-            //LivingInventory.AddItem(livingInventory.mItems[0]);
-
-
-            //go ahead and swap
-            //ghostInventory.SwapItem(item);
-            //Inventory temp = ghostInventory;
-            //ghostInventory = livingInventory;
-            //livingInventory = temp;
-            //Debug.LogFormat("gh {0} and li {1}", ghostInventory.transform.name, livingInventory.transform.name);
-            //Debug.Log("Swapped Items");
+            if (ghostSize != 0)
+            {
+                ghostItem = ghostInventory.mItems[0];
+                ghostInventory.RemoveItem(ghostItem);
+            }
         }
         //if (jumpTime > 0)
         //{
@@ -112,11 +132,12 @@ public class H_Ghost_Player : D_PlayerAbstract
     public void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.LogFormat("Collided with {0}", collision.name);
-        IInventoryItem item = collision.GetComponent<IInventoryItem>();
-        //Debug.LogFormat("Item is {0}", item);
-        if (item != null)
+        IInventoryItem triggerItem;
+        if (collision.CompareTag("Item"))
         {
-            ghostInventory.AddItem(item);
+            triggerItem = collision.GetComponent<IInventoryItem>();
+            ghostInventory.AddItem(triggerItem);
         }
+        //Debug.LogFormat("Item is {0}", item);
     }
 }

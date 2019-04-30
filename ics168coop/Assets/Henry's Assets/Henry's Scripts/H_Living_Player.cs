@@ -55,17 +55,53 @@ public class H_Living_Player : D_PlayerAbstract
                 jumpTime = maxJump;
             }
         }
-        if(Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("left shift"))
         {
-            //Swap items
-            //IInventoryItem item = livingInventory.mItems[0];
-            ////go ahead and swap
-            //livingInventory.SwapItem(item);
-            //Inventory temp = livingInventory;
-            //livingInventory = ghostInventory;
-            //ghostInventory = temp;
-            //IInventoryItem newItem = living
+            Debug.Log("Swapping Items");
+            IInventoryItem ghostItem, livingItem;
+            int ghostSize = ghostInventory.mItems.Count;
+            int livingSize = livingInventory.mItems.Count;
+            if (ghostSize != 0 && livingSize != 0)
+            {
+                Debug.Log("Both Inventories were full");
+                ghostItem = ghostInventory.mItems[0];
+                livingItem = livingInventory.mItems[0];
+                livingInventory.SwapItem(ghostItem);
+                ghostInventory.SwapItem(ghostItem);
+            }
+            if (ghostSize != 0 && livingSize == 0)
+            {
+                Debug.Log("living Inventory was empty before switching");
+                ghostItem = ghostInventory.mItems[0];
+                livingInventory.SwapItem(ghostItem);
+                ghostInventory.RemoveItem(ghostItem);
+            }
+            if (ghostSize == 0 && livingSize != 0)
+            {
+                Debug.Log("Ghost Inventory was empty before switching");
+                livingItem = livingInventory.mItems[0];
+                ghostInventory.SwapItem(livingItem);
+                livingInventory.RemoveItem(livingItem);
+            }
+            if (ghostSize == 0 && livingSize == 0)
+            {
+                Debug.Log("Both Inventories are empty");
+            }
         }
+        if (Input.GetKeyDown("left ctrl"))
+        {
+            Debug.Log("Living Player is dropping their item");
+            IInventoryItem livingItem;
+            int livingSize = livingInventory.mItems.Count;
+
+            if (livingSize != 0)
+            {
+                livingItem = livingInventory.mItems[0];
+                //Instantiate(livingItem);
+                livingInventory.RemoveItem(livingItem);
+            }
+        }
+
         if (jumpTime > 0)
         {
             jumpTime -= Time.deltaTime;

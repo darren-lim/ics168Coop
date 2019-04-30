@@ -11,13 +11,14 @@ public class LivingInventoryHUD : InventoryHUDBase
     private void Awake()
     {
         blocker = GameObject.Find("Blocker 1");
-        Debug.LogFormat("Blocker {0}", blocker);
+        //Debug.LogFormat("Blocker {0}", blocker);
     }
 
     private void Update()
     {
         Image image = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>();
-        if(image != null)
+        //Debug.LogFormat("Image is : {0} ", image);
+        if (image.IsActive())
         {
             blocker.GetComponent<BoxCollider2D>().enabled = false;
         }
@@ -27,6 +28,8 @@ public class LivingInventoryHUD : InventoryHUDBase
     {
         livingInventory.ItemAdded += InventoryScript_ItemAdded;
         livingInventory.ItemSwapped += InventoryScript_ItemSwapped;
+        livingInventory.ItemRemoved += InventoryScript_ItemRemoved;
+        livingInventory.ItemDropped += InventoryScript_ItemDropped;
     }
 
     public override void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
@@ -50,5 +53,18 @@ public class LivingInventoryHUD : InventoryHUDBase
             image.enabled = false;
             image.sprite = null;
         }
+    }
+
+    public void InventoryScript_ItemRemoved(object sender, InventoryEventArgs e)
+    {
+        Image image = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>();
+
+        image.enabled = false;
+        image.sprite = null;
+    }
+
+    public void InventoryScript_ItemDropped(object sender, InventoryEventArgs e)
+    {
+        Debug.Log("Droppin L's Item");
     }
 }

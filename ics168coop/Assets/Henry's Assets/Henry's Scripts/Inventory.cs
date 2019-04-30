@@ -14,6 +14,10 @@ public class Inventory : MonoBehaviour
 
     public event EventHandler<InventoryEventArgs> ItemSwapped;
 
+    public event EventHandler<InventoryEventArgs> ItemRemoved;
+
+    public event EventHandler<InventoryEventArgs> ItemDropped;
+
     public void AddItem(IInventoryItem item)
     {
         if (mItems.Count <= mSLOT)
@@ -55,22 +59,16 @@ public class Inventory : MonoBehaviour
                 ItemAdded(this, new InventoryEventArgs(item));
             }
         }
-            //if (mItems.Contains(item))
-            //{
-            //    mItems.Remove(item);
+    }
 
-            //    item.OnSwap();
+    public void RemoveItem(IInventoryItem item)
+    {
+        mItems.Clear();
+        ItemRemoved(this, new InventoryEventArgs(item));
+    }
 
-            //    CircleCollider2D collider = (item as MonoBehaviour).GetComponent<CircleCollider2D>();
-
-            //    if(collider != null)
-            //    {
-            //        collider.enabled = true;
-            //    }
-            //    if(ItemSwapped != null)
-            //    {
-            //        ItemSwapped(this, new InventoryEventArgs(item));
-            //    }
-            //}
-        }
+    public void DropItem(IInventoryItem item)
+    {
+        ItemDropped(this, new InventoryEventArgs(item));
+    }
 }

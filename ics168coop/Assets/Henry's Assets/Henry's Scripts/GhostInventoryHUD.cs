@@ -11,6 +11,8 @@ public class GhostInventoryHUD : InventoryHUDBase
     {
         ghostInventory.ItemAdded += InventoryScript_ItemAdded;
         ghostInventory.ItemSwapped += InventoryScript_ItemSwapped;
+        ghostInventory.ItemRemoved += InventoryScript_ItemRemoved;
+        ghostInventory.ItemDropped += InventoryScript_ItemDropped;
     }
 
     public override void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
@@ -34,5 +36,20 @@ public class GhostInventoryHUD : InventoryHUDBase
             image.enabled = false;
             image.sprite = null;
         }
+    }
+
+    public void InventoryScript_ItemRemoved(object sender, InventoryEventArgs e)
+    {
+        Image image = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>();
+        if(image.enabled)
+        {
+            image.enabled = false;
+            image.sprite = null;
+        }
+    }
+
+    public void InventoryScript_ItemDropped(object sender, InventoryEventArgs e)
+    {
+        Debug.Log("Droppin G's Item");
     }
 }

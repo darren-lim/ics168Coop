@@ -9,6 +9,7 @@ TagManager:
   - Player 2
   - PassThrough
   - Enemy
+  - Item
   layers:
   - Default
   - TransparentFX
