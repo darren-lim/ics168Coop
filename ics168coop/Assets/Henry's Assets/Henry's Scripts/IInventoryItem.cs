@@ -9,6 +9,7 @@ public interface IInventoryItem
     Sprite Image { get; }
     void OnPickup();
     void OnSwap();
+    void OnDrop(Vector3 newPosition);
 }
 
 public class InventoryEventArgs : EventArgs

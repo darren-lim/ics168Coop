@@ -101,13 +101,13 @@ public class H_Ghost_Player : D_PlayerAbstract
         {
             Debug.Log("Ghost Player is dropping their item");
             IInventoryItem ghostItem;
-            int ghostSize = livingInventory.mItems.Count;
+            int ghostSize = ghostInventory.mItems.Count;
 
             if (ghostSize != 0)
             {
                 ghostItem = ghostInventory.mItems[0];
-                //GameObject gItem = ghostItem;
-                //Instantiate(ghostItem.
+                Vector3 newPosition = new Vector3(this.transform.position.x, this.transform.position.y - 1, this.transform.position.z);
+                ghostInventory.DropItem(ghostItem, newPosition);
                 ghostInventory.RemoveItem(ghostItem);
             }
         }

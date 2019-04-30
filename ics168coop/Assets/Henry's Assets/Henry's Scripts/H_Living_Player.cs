@@ -97,7 +97,8 @@ public class H_Living_Player : D_PlayerAbstract
             if (livingSize != 0)
             {
                 livingItem = livingInventory.mItems[0];
-                //Instantiate(livingItem);
+                Vector3 newPosition = new Vector3(this.transform.position.x, this.transform.position.y - 1.2f, this.transform.position.z);
+                livingInventory.DropItem(livingItem, newPosition);
                 livingInventory.RemoveItem(livingItem);
             }
         }

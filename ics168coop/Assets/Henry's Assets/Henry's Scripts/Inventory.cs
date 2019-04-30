@@ -67,8 +67,9 @@ public class Inventory : MonoBehaviour
         ItemRemoved(this, new InventoryEventArgs(item));
     }
 
-    public void DropItem(IInventoryItem item)
+    public void DropItem(IInventoryItem item, Vector3 position)
     {
+        item.OnDrop(position);
         ItemDropped(this, new InventoryEventArgs(item));
     }
 }

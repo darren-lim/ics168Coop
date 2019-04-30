@@ -30,4 +30,15 @@ public class OrbOfPhasing : MonoBehaviour, IInventoryItem
     public void OnSwap()
     {
     }
+
+    public void OnDrop(Vector3 newPosition)
+    {
+        Debug.Log("HEREEEEEEEE");
+        Transform myT = gameObject.GetComponent<Transform>();
+        myT.position = newPosition;
+        gameObject.SetActive(true);
+        myT.GetComponent<CircleCollider2D>().enabled = true;
+
+        //Instantiate(gameObject, newPosition, Quaternion.identity);
+    }
 }
