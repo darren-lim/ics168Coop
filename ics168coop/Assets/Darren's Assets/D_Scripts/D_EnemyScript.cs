@@ -62,7 +62,9 @@ public class D_EnemyScript : MonoBehaviour
         sRend.enabled = false;
         Box.enabled = false;
         //reposition
-        transform.position = InitPos;
+        Ghost = GameObject.FindGameObjectWithTag("Player 1");
+        Vector2 ghostpos = new Vector2(Ghost.GetComponent<Transform>().position.x, Ghost.GetComponent<Transform>().position.z);
+        transform.position = Random.insideUnitCircle * 7 + ghostpos;
         isRespawning = true;
         yield return new WaitForSeconds(2f);
         isRespawning = false;

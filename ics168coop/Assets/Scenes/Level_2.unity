@@ -664,6 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184c9cf4a33f12248a77f1ee869cb752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Reaper: {fileID: 0}
   mImage: {fileID: 21300000, guid: 53681404b1ab9cc41b39be58f262869c, type: 3}
 --- !u!4 &471229407 stripped
 Transform:
@@ -1876,6 +1877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7861977282839635311, guid: 72d5c758b45ee4d598d542fb4092e768, type: 3}
+    - {fileID: 7861977282839635308, guid: 72d5c758b45ee4d598d542fb4092e768, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 72d5c758b45ee4d598d542fb4092e768, type: 3}
 --- !u!4 &1165709535 stripped
 Transform:
