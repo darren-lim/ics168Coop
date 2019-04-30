@@ -353,15 +353,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 3cece6bb68c3e104b86598dd4adae23e,
         type: 3}
-    - target: {fileID: 851642340626221397, guid: 72d5c758b45ee4d598d542fb4092e768,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 564701081169750483, guid: 72d5c758b45ee4d598d542fb4092e768,
         type: 3}
       propertyPath: Speed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 851642340626221397, guid: 72d5c758b45ee4d598d542fb4092e768,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7861977282839635308, guid: 72d5c758b45ee4d598d542fb4092e768, type: 3}
@@ -2846,6 +2846,36 @@ PrefabInstance:
     - target: {fileID: 585068556085466807, guid: 604c67d569d6549f089f95e425bfac06,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811669798999548476, guid: 604c67d569d6549f089f95e425bfac06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811669798999548476, guid: 604c67d569d6549f089f95e425bfac06,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811669800216743263, guid: 604c67d569d6549f089f95e425bfac06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811669800216743263, guid: 604c67d569d6549f089f95e425bfac06,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811669800585670552, guid: 604c67d569d6549f089f95e425bfac06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811669800585670552, guid: 604c67d569d6549f089f95e425bfac06,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
