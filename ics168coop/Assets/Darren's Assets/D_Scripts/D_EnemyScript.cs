@@ -52,6 +52,11 @@ public class D_EnemyScript : MonoBehaviour
         }
     }
 
+    public void changeSpeed(float inc)
+    {
+        Speed += inc;
+    }
+
     IEnumerator Respawn()
     {
         sRend.enabled = false;
