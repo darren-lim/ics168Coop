@@ -29,7 +29,7 @@ public class SceneManagerScript : MonoBehaviour
         {
             PauseOrResume();
         }
-        if (WinText.GetComponent<Canvas>().enabled)
+        if (WinText!=null && WinText.GetComponent<Canvas>().enabled)
         {
             Time.timeScale = 0.1f;
             StartCoroutine( HoldUntilNext() );
