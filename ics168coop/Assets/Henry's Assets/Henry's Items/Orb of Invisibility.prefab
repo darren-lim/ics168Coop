@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7812780957024918971}
   - component: {fileID: 8597087516839515190}
   - component: {fileID: 1178094080889928742}
+  - component: {fileID: 253406416}
   m_Layer: 0
   m_Name: Orb of Invisibility
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,9 +91,23 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &253406416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3694900607789433903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184c9cf4a33f12248a77f1ee869cb752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Reaper: {fileID: 0}
+  mImage: {fileID: 21300000, guid: 53681404b1ab9cc41b39be58f262869c, type: 3}

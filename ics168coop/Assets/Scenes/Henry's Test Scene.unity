@@ -132,11 +132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orb of Phasing
       objectReference: {fileID: 0}
-    - target: {fileID: 3694900607789433903, guid: 8954bdea4e95c1f4ba60c7953e854302,
-        type: 3}
-      propertyPath: m_TagString
-      value: Item
-      objectReference: {fileID: 0}
     - target: {fileID: 7812780957024918971, guid: 8954bdea4e95c1f4ba60c7953e854302,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,11 +186,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178094080889928742, guid: 8954bdea4e95c1f4ba60c7953e854302,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8954bdea4e95c1f4ba60c7953e854302, type: 3}
@@ -564,25 +554,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 169659232b0334a2caf72a849546f8c7, type: 3}
---- !u!1 &253406415 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3694900607789433903, guid: 8954bdea4e95c1f4ba60c7953e854302,
-    type: 3}
-  m_PrefabInstance: {fileID: 643570}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &253406416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 253406415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 184c9cf4a33f12248a77f1ee869cb752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mImage: {fileID: 21300000, guid: 53681404b1ab9cc41b39be58f262869c, type: 3}
 --- !u!1 &285908269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,16 +973,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ad69bd2b8cd8e41a4227d1b70f455f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P2Speed: 5
-  P2Jump: 5
-  P2Health: 3
-  GroundLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  P1Speed: 5
+  P1Health: 3
   GoThroughTag: PassThrough
   orginial_size: {x: 0, y: 0}
   ghostInventory: {fileID: 1595554241}
   livingInventory: {fileID: 1093510658}
+  scene: {fileID: 0}
+  gotext: {fileID: 0}
 --- !u!1001 &676779047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1342,6 +1311,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 132877248}
     m_Modifications:
+    - target: {fileID: 3918119730028025597, guid: 2830175b7e206f64085f51f3cd796c25,
+        type: 3}
+      propertyPath: m_Name
+      value: Living
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918119730028025597, guid: 2830175b7e206f64085f51f3cd796c25,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2318080878694830793, guid: 2830175b7e206f64085f51f3cd796c25,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1396,16 +1375,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918119730028025597, guid: 2830175b7e206f64085f51f3cd796c25,
-        type: 3}
-      propertyPath: m_Name
-      value: Living
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918119730028025597, guid: 2830175b7e206f64085f51f3cd796c25,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player 2
       objectReference: {fileID: 0}
     - target: {fileID: 5657649135369159738, guid: 2830175b7e206f64085f51f3cd796c25,
         type: 3}
@@ -1815,6 +1784,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 132877248}
     m_Modifications:
+    - target: {fileID: 3375557766592484978, guid: b821ee161eaa44345a7064ed4bee3c07,
+        type: 3}
+      propertyPath: m_Name
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 3375557766592484978, guid: b821ee161eaa44345a7064ed4bee3c07,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6727093556713715732, guid: b821ee161eaa44345a7064ed4bee3c07,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1869,16 +1848,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375557766592484978, guid: b821ee161eaa44345a7064ed4bee3c07,
-        type: 3}
-      propertyPath: m_Name
-      value: Ghost
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375557766592484978, guid: b821ee161eaa44345a7064ed4bee3c07,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 6275752885949305513, guid: b821ee161eaa44345a7064ed4bee3c07,
         type: 3}
@@ -2121,7 +2090,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.053735018, y: 0.13959694}
+  m_Offset: {x: 0.02654934, y: -0.09397364}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2132,7 +2101,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.7410064, y: 2.7395916}
+  m_Size: {x: 1.9254341, y: 1.9899931}
   m_EdgeRadius: 0
 --- !u!4 &1336654064
 Transform:
