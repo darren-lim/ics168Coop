@@ -23,7 +23,7 @@ public class OrbOfPhasing : MonoBehaviour, IInventoryItem
         Reaper = GameObject.FindObjectOfType(typeof(D_EnemyScript)) as D_EnemyScript;
         if (Reaper != null)
         {
-            Reaper.changeSpeed(2f);
+            Reaper.changeSpeed(1.4f);
         }
     }
 
