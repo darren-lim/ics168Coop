@@ -9,14 +9,18 @@ public class SceneManagerScript : MonoBehaviour
     private bool isGameOver = false;
     public GameObject PauseCanvas;
     public GameObject GameOverCanvas;
+    public GameObject WinText;
+
+    private int maxStages;
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
-        if (PauseCanvas == null || GameOverCanvas == null) return;
+        if (PauseCanvas == null || GameOverCanvas == null || WinText == null) return;
         PauseCanvas.SetActive(false);
         GameOverCanvas.SetActive(false);
+        maxStages = SceneManager.sceneCountInBuildSettings;
     }
 
     private void Update()
@@ -25,11 +29,16 @@ public class SceneManagerScript : MonoBehaviour
         {
             PauseOrResume();
         }
+        if (WinText.GetComponent<Canvas>().enabled)
+        {
+            Time.timeScale = 0.1f;
+            StartCoroutine( HoldUntilNext() );
+        }
     }
 
     public void loadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % maxStages);
     }
     public void loadLevel(string sceneName)
     {
@@ -75,5 +84,11 @@ public class SceneManagerScript : MonoBehaviour
             isGameOver = true;
             Time.timeScale = 0;
         }
+    }
+
+    private IEnumerator HoldUntilNext()
+    {
+        yield return new WaitForSeconds( 0.3f );
+        loadNextScene();
     }
 }
