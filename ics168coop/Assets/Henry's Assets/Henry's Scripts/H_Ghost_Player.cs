@@ -106,6 +106,8 @@ public class H_Ghost_Player : D_PlayerAbstract
             if (ghostSize != 0)
             {
                 ghostItem = ghostInventory.mItems[0];
+                //GameObject gItem = ghostItem;
+                //Instantiate(ghostItem.
                 ghostInventory.RemoveItem(ghostItem);
             }
         }
