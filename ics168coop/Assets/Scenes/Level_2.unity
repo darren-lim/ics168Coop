@@ -1864,6 +1864,16 @@ PrefabInstance:
       propertyPath: ghostInventory
       value: 
       objectReference: {fileID: 2070779088}
+    - target: {fileID: 7861977283845484003, guid: 72d5c758b45ee4d598d542fb4092e768,
+        type: 3}
+      propertyPath: P2Jump
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861977284013925938, guid: 72d5c758b45ee4d598d542fb4092e768,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d5c758b45ee4d598d542fb4092e768, type: 3}
 --- !u!4 &1165709535 stripped
