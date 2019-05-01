@@ -38,6 +38,10 @@ public class SceneManagerScript : MonoBehaviour
 
     public void loadNextScene()
     {
+        if (maxStages == 0)
+        {
+            maxStages = SceneManager.sceneCountInBuildSettings;
+        }
         SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % maxStages);
     }
     public void loadLevel(string sceneName)

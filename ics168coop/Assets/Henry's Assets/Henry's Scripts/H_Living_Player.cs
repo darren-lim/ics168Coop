@@ -13,6 +13,8 @@ public class H_Living_Player : D_PlayerAbstract
     public LayerMask GroundLayer;
     float jumpTime = 0f;
     float maxJump = 0.2f;
+    float invinsibility_time = 2.0f;
+    bool is_invinsible = false;
 
     //public string GoThroughTag = "PassThrough";
     //public LivingInventory livingInventory;
@@ -112,7 +114,14 @@ public class H_Living_Player : D_PlayerAbstract
 
     public override void TakeDamage(float dmg)
     {
-        throw new System.NotImplementedException();
+        if (!is_invinsible)
+        {
+            is_invinsible = true;
+            P2Health -= dmg;
+            Debug.Log(P2Health);
+            StartCoroutine( Invinsible() );
+        }
+        //throw new System.NotImplementedException();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -122,5 +131,11 @@ public class H_Living_Player : D_PlayerAbstract
         {
             livingInventory.AddItem(item);
         }
+    }
+
+    private IEnumerator Invinsible()
+    {
+        yield return new WaitForSeconds( invinsibility_time );
+        is_invinsible = false;
     }
 }
