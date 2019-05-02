@@ -1002,11 +1002,12 @@ MonoBehaviour:
 
     The living player must get to the end of the level.
 
-
     Get keys to reveal the path.
 
 
-    Avoid the specter.
+    Ghost Player should avoid the specter.
+
+    Living Player should avoid the spikes.
 
 
     You only get 3 lives per level.
