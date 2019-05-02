@@ -21,7 +21,6 @@ public class H_Ghost_Player : D_PlayerAbstract
     public Inventory livingInventory;
 
     public SceneManagerScript scene;
-    public GameObject gotext;
 
     // Start is called before the first frame update
     void Start()
@@ -121,13 +120,10 @@ public class H_Ghost_Player : D_PlayerAbstract
     public override void TakeDamage(float dmg)
     {
         P1Health--;
-        Debug.Log("OW");
         if(P1Health <=0)
         {
-            scene = GameObject.FindObjectOfType(typeof(SceneManagerScript)) as SceneManagerScript;
+            // scene = GameObject.FindObjectOfType(typeof(SceneManagerScript)) as SceneManagerScript;
             scene.GameOver();
-            gotext = GameObject.Find("GameOver Text");
-            gotext.GetComponent<Canvas>().enabled = true;
         }
     }
 

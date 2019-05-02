@@ -22,6 +22,8 @@ public class H_Living_Player : D_PlayerAbstract
     public Inventory livingInventory;
     public Inventory ghostInventory;
 
+    public SceneManagerScript scene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,13 +61,13 @@ public class H_Living_Player : D_PlayerAbstract
         }
         if (Input.GetKeyDown("left shift"))
         {
-            Debug.Log("Swapping Items");
+            // Debug.Log("Swapping Items");
             IInventoryItem ghostItem, livingItem;
             int ghostSize = ghostInventory.mItems.Count;
             int livingSize = livingInventory.mItems.Count;
             if (ghostSize != 0 && livingSize != 0)
             {
-                Debug.Log("Both Inventories were full");
+                // Debug.Log("Both Inventories were full");
                 ghostItem = ghostInventory.mItems[0];
                 livingItem = livingInventory.mItems[0];
                 livingInventory.SwapItem(ghostItem);
@@ -73,26 +75,26 @@ public class H_Living_Player : D_PlayerAbstract
             }
             if (ghostSize != 0 && livingSize == 0)
             {
-                Debug.Log("living Inventory was empty before switching");
+                // Debug.Log("living Inventory was empty before switching");
                 ghostItem = ghostInventory.mItems[0];
                 livingInventory.SwapItem(ghostItem);
                 ghostInventory.RemoveItem(ghostItem);
             }
             if (ghostSize == 0 && livingSize != 0)
             {
-                Debug.Log("Ghost Inventory was empty before switching");
+                // Debug.Log("Ghost Inventory was empty before switching");
                 livingItem = livingInventory.mItems[0];
                 ghostInventory.SwapItem(livingItem);
                 livingInventory.RemoveItem(livingItem);
             }
             if (ghostSize == 0 && livingSize == 0)
             {
-                Debug.Log("Both Inventories are empty");
+                // Debug.Log("Both Inventories are empty");
             }
         }
         if (Input.GetKeyDown("left ctrl"))
         {
-            Debug.Log("Living Player is dropping their item");
+            // Debug.Log("Living Player is dropping their item");
             IInventoryItem livingItem;
             int livingSize = livingInventory.mItems.Count;
 
@@ -118,8 +120,15 @@ public class H_Living_Player : D_PlayerAbstract
         {
             is_invinsible = true;
             P2Health -= dmg;
-            Debug.Log(P2Health);
-            StartCoroutine( Invinsible() );
+            if(P2Health <=0)
+            {
+                // scene = GameObject.FindObjectOfType(typeof(SceneManagerScript)) as SceneManagerScript;
+                scene.GameOver();
+            }
+            else
+            {
+                StartCoroutine( Invinsible() );
+            }
         }
         //throw new System.NotImplementedException();
     }
